@@ -1,5 +1,7 @@
 import Metashape
 
+#試しにコメントを書いてみる。
+
 chunk = Metashape.app.document.chunk
 cameras = chunk.cameras
 
