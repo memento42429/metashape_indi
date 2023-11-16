@@ -1,0 +1,14 @@
+target 1,target 2,80.95,1
+target 1,target 5,160.5,1
+target 1,target 6,179.76,1
+target 2,target 5,179.76,1
+target 2,target 6,160.5,1
+target 3,target 4,80.95,1
+target 5,target 6,80.95,1
+0target 1,target 2,80.95,1
+0target 1,0target 5,160.5,1
+0target 1,0target 6,179.76,1
+0target 2,0target 5,179.76,1
+0target 2,0target 6,160.5,1
+0target 3,0target 4,80.95,1
+0target 5,0target 6,80.95,1

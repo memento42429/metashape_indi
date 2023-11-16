@@ -1,5 +1,7 @@
+from tarfile import data_filter
 import Metashape
 import csv
+import os
 import pprint
 
 compatible_major_version = "2.0"
@@ -10,10 +12,16 @@ if found_major_version != compatible_major_version:
 doc = Metashape.app.document
 chunks = doc.chunks
 
-with open('I:\Scales.csv') as file:  
+# 現在のスクリプトファイルのディレクトリを取得
+script_directory = os.path.dirname(os.path.realpath(__file__))
+
+# Scales.csvファイルのパスを構築
+csv_file_path = os.path.join(script_directory, 'Scales.csv')
+
+with open(csv_file_path) as file:  
 	reader = csv.reader(file)
-	list = [row for row in reader] #listのなかに行ごとの集合として格納される。
-	print(list)
+	data_list = [row for row in reader] #data_listのなかに行ごとの集合として格納される。
+	print(data_list)
 
 for chunk in chunks:
 	if chunk.enabled is True:
@@ -21,7 +29,7 @@ for chunk in chunks:
 		i = 0
 		while i < 24: #24つのスケールバーを使う。一行ずつスケールバー作成を繰り返す。
 		
-			l = list[i]
+			l = data_list[i]
 			i += 1
 			scale1 = None
 			scale2 = None
