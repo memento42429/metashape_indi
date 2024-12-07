@@ -1,5 +1,7 @@
+from tarfile import data_filter
 import Metashape
 import csv
+import os
 import pprint
 
 compatible_major_version = "2.0"
